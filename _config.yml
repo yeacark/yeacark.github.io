@@ -15,7 +15,7 @@ links:
   # IF YOU DON'T WANT TO USE ANY OF THE FOLLOWING, JUST LEAVE THE URL BLANK
     
     # FACEBOOK
-  - Name: Facebook
+   - Name: Facebook
     URL: 
     Username: 
     Color: '#3b5998'
