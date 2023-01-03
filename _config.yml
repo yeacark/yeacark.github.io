@@ -1,0 +1,196 @@
+# YOUR NAME OR TITLE OF YOUR SITE
+name: yeacark
+
+# YOUR BRAND/PERSONAL TAGLINE
+tagline: bella :p
+# YOUR/BRAND IMAGE URL
+Image_URL: https://github.com/yeacark/yeacark.github.io/images/carkyboi.jpg
+
+# CHANGE THE BACKGROUND IMAGE OF THE WEBSITE BY JUST ADDING THE IMAGE URL
+Cover_Image: https://github.com/yeacark/yeacark.github.io/images/banner2.jpeg
+
+# SOCIAL MEDIA
+links:
+
+  # IF YOU DON'T WANT TO USE ANY OF THE FOLLOWING, JUST LEAVE THE URL BLANK
+    
+    # FACEBOOK
+  - Name: Facebook
+    URL: 
+    Username: 
+    Color: '#3b5998'
+    Icon-Class: fab fa-facebook
+
+    # INSTAGRAM
+  - Name: Instagram
+    URL: https://www.instagram.com/222fxde
+    Username: 222fxde
+    Color: '#DD2A7B'
+    Icon-Class: fab fa-instagram
+
+    # TWITTER
+  - Name: Twitter
+    URL: https://twitter.com/yeaacark
+    Username: yeaacark
+    Color: '#1DA1F2'
+    Icon-Class: fab fa-twitter
+
+    # Cal.com
+  - Name: Cal.com
+    URL: 
+    Username: 
+    Color: '#232323'
+    Icon-Class: fa fa-calendar-check
+
+    # CLUBHOUSE
+  - Name: Clubhouse
+    URL: 
+    Username: 
+    Color: '#f1c40f'
+    Icon-Class: fas fa-hand-paper -mt-0.5
+    
+    # LINKEDIN
+  - Name: LinkedIn
+    URL: 
+    Username: 
+    Color: '#2867B2'
+    Icon-Class: fab fa-linkedin-in
+
+    # YOUTUBE
+  - Name: YouTube
+    URL: https://www.youtube.com/@yeacark
+    Username: '@yeacark'
+    Color: '#ff0000'
+    Icon-Class: fab fa-youtube
+
+    # GITHUB
+  - Name: GitHub
+    URL: http://github.com/yeacark
+    Username: yeacark
+    Color: '#6e5494'
+    Icon-Class: fab fa-github
+
+    # EMAIL
+  - Name: Email
+    URL: 
+    Icon-Class: fas fa-envelope
+    Color: '#e17055'
+    Text_Color: '#ffffff'
+
+    # TWITCH
+  - Name: Twitch
+    URL: 'https://twitch.tv/cark_irl'
+    Username: cark_irl
+    Icon-Class: fab fa-twitch
+    Color: '#9147fe'
+    Text_Color: '#ffffff'
+
+    # VIMEO
+  - Name: Vimeo
+    URL: 
+    Username: 
+    Icon-Class: fab fa-vimeo-v
+    Color: '#1ab7ea'
+    Text_Color: '#ffffff'
+
+    # MESSENGER
+  - Name: Messenger
+    URL: 
+    Username: 
+    Color: '#006AFF'
+    Icon-Class: fab fa-facebook-messenger
+
+    # REDDIT
+  - Name: Reddit
+    URL: 
+    Username: 
+    Color: '#FF4500'
+    Icon-Class: fab fa-reddit-alien
+
+  #   # WHATSAPP
+  # - Name: WhatsApp
+  #   URL: 
+  #   Username: 
+  #   Color: '#25d366'
+  #   Icon-Class: fab fa-whatsapp
+
+    # TELEGRAM
+  - Name: Telegram
+    URL: 
+    Username: 
+    Color: '#0088cc'
+    Icon-Class: fab fa-telegram-plane
+
+    # SNAPCHAT
+  - Name: Snapchat
+    URL: 
+    Username: 
+    Color: '#FFFC00'
+    Text_Color: '#000000'
+    Icon-Class: fab fa-snapchat-ghost
+
+    # STEAM
+  - Name: Steam
+    URL: 
+    Username: 
+    Color: '#66c0f4'
+    Text_Color: '#000000'
+    Icon-Class: fab fa-steam
+
+  #   # DISCORD
+  # - Name: Discord
+  #   URL: 'https://discord.gg'
+  #   Username: 
+  #   Icon-Class: fab fa-discord
+  #   Color: '#5865F2'
+  #   Text_Color: '#ffffff'
+
+    # PINTEREST
+  - Name: Pinterest
+    URL: 
+    Username: 
+    Color: '#E60023'
+    Icon-Class: fab fa-pinterest
+
+    # BEHANCE
+  - Name: Behance
+    URL: 
+    Username: 
+    Color: '#1769ff'
+    Icon-Class: fab fa-behance
+
+    # SPOTIFY
+  - Name: Spotify
+    URL: https://open.spotify.com/user/5wwwnfjkomp9pp7lyuis3aqir
+    Username: 5wwwnfjkomp9pp7lyuis3aqir
+    Color: '#1DB954'
+    Icon-Class: fab fa-spotify
+
+# YOU CAN REMOVE FOOTER COMPLETELY BY SIMPLY REMOVING EITHER THE YES OR REMOVING THE FOOTER STATEMENT BELOW COMPLETELY
+footer: 'Yes'
+
+# STOP EDITING HERE ---------- YOU'VE REACHED THE END OF THE CONFIGURATION
+
+# Compress
+compress_html:
+  clippings: all
+
+# Exclude
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - Icon
+
+# Base URL
+# baseurl: /links
+
+# Default Markdown Engine
+markdown: kramdown
