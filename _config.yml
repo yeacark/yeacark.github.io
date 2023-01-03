@@ -13,14 +13,14 @@ Cover_Image: https://github.com/yeacark/yeacark.github.io/images/banner2.jpeg
 links:
     # INSTAGRAM
 - Name: Instagram
-    URL: https://www.instagram.com
+    URL: https://www.instagram.com/
     Username: 222fxde
     Color: '#DD2A7B'
     Icon-Class: fab fa-instagram
 
     # TWITTER
   - Name: Twitter
-    URL: https://twitter.com
+    URL: https://twitter.com/
     Username: yeaacark
     Color: '#1DA1F2'
     Icon-Class: fab fa-twitter
@@ -48,14 +48,14 @@ links:
 
     # YOUTUBE
   - Name: YouTube
-    URL: https://www.youtube.com
+    URL: https://www.youtube.com/
     Username: '@yeacark'
     Color: '#ff0000'
     Icon-Class: fab fa-youtube
 
     # GITHUB
   - Name: GitHub
-    URL: http://github.com
+    URL: http://github.com/
     Username: yeacark
     Color: '#6e5494'
     Icon-Class: fab fa-github
@@ -69,7 +69,7 @@ links:
 
     # TWITCH
   - Name: Twitch
-    URL: 'https://twitch.tv'
+    URL: 'https://twitch.tv/'
     Username: cark_irl
     Icon-Class: fab fa-twitch
     Color: '#9147fe'
@@ -129,7 +129,7 @@ links:
 
      # DISCORD
    - Name: Server Discord
-     URL: 'https://dsc.gg'
+     URL: 'https://dsc.gg/'
      Username: cark
      Icon-Class: fab fa-discord
      Color: '#5865F2'
@@ -137,7 +137,7 @@ links:
 
        # DISCORD
    - Name: Invita carkbot!
-     URL: 'https://dsc.gg'
+     URL: 'https://dsc.gg/'
      Username: carkbot
      Icon-Class: fab fa-discord
      Color: '#5865F2'
@@ -145,7 +145,7 @@ links:
 
       # GITHUB
   - Name: Pagina GitHub di carkbot
-    URL: http://github.com
+    URL: http://github.com/
     Username: yeacark/carkbot
     Color: '#6e5494'
     Icon-Class: fab fa-github
@@ -166,7 +166,7 @@ links:
 
     # SPOTIFY
   - Name: Spotify
-    URL: https://open.spotify.com/user
+    URL: https://open.spotify.com/user/
     Username: 5wwwnfjkomp9pp7lyuis3aqir
     Color: '#1DB954'
     Icon-Class: fab fa-spotify
