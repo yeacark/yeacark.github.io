@@ -5,8 +5,14 @@
     --bgColor2: #090a0f;
     --accentColor: #FFF;
     --font: 'Karla', sans-serif;
-    --delay: .3s;
+    --delay: .4s;
 }
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 body {
     margin: 0;
@@ -14,7 +20,6 @@ body {
     min-height: 100vh;
     font-family: var(--font);
     background: radial-gradient(ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
-    background-image: url('bg.jpg');
     opacity: 0;
     animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
     animation-fill-mode: forwards;
@@ -35,7 +40,7 @@ body {
 
 #userName {
     color: var(--accentColor);
-    font-size: 1.87em;
+    font-size: 32px; /* Aumenta la dimensione del font */
     font-weight: bold;
     line-height: 1.25;
     display: block;
@@ -45,52 +50,67 @@ body {
     text-decoration: none;
 }
 
-#links {
+.links-container {
+    margin-top: 20px;
+  }
+  
+  #links {
     max-width: 675px;
     width: auto;
     display: block;
     margin: 27px auto;
-}
-
-.link {
+    text-align: center;
+  }
+  
+  .link {
+    display: inline-block;
     position: relative;
     background-color: transparent;
     color: var(--accentColor);
     border: solid var(--accentColor) 2px;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 18px;
     text-align: center;
-    display: block;
+    margin-top: 8px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    padding: 10px; /* 17px */
+    padding: 10px;
+    width: 240px;
+    height: 25px;
     text-decoration: none;
-    /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
-    -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-    .link:hover {
-        background-color: var(--accentColor);
-        color: var(--bgColor);
-    }
-}
-
-.link:active {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out; /* Aggiungi transizione al cambio di colore del testo e del bordo */
+  }
+  
+  .link:after {
+    content: '';
+    position: absolute;
     background-color: var(--accentColor);
-    color: var(--bgColor);
-}
+    width: 0%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transition: all 0.5s ease;
+    z-index: -1;
+    border-radius: 8px; /* Aggiungi il valore del bordo arrotondato */
+  }
+  
+  .link:hover:after {
+    width: 100%;
+  }
+  
+  .link:hover {
+    color: var(--bgColor); /* Cambia il colore del testo al passaggio del mouse */
+    /* border-color: var(--bgColor); /* Cambia il colore del bordo al passaggio del mouse */
+  }
 
-#hashtag {
-    position: relative;
-    padding-bottom: 20px;
-    color: var(--accentColor);
-    font-size: 1rem;
-    display: block;
-    font-family: var(--font);
+  #hashtag {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     text-align: center;
+    margin-bottom: 25px; /* Aggiungi uno spazio tra il testo e il bordo inferiore della pagina */
 
     /*  animation   */
     overflow: hidden;
@@ -161,11 +181,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px;
+    max-width: 700px; /* Aumenta il valore della proprietà max-width */
     /* max-height: 500px; */
     width: auto;
     height: auto;
-    margin: 56px;
+    /* margin: 56px; */ /* Rimuovi la proprietà margin */
     background-color: var(--bgColor);
     /* transform: rotate(32deg); */
     transform: scale(0);
@@ -173,13 +193,13 @@ body {
 }
 
 .popup-quote {
-    font-family : Baskerville, Georgia, serif;
-    font-style : italic;
+    /* font-family : Baskerville, Georgia, serif; */
+    font-style : bold;
     position: flex;
     color: var(--accentColor);
     padding: 20px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 40px;
 }
 
 .popup-photo {
