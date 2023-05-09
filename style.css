@@ -106,11 +106,13 @@ body {
   }
 
   #hashtag {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    right: 0;
     width: 100%;
-    text-align: center;
-    margin-bottom: 25px; /* Aggiungi uno spazio tra il testo e il bordo inferiore della pagina */
+    text-align: right;
+    margin-bottom: 25px;
+    margin-right: 25px;
 
     /*  animation   */
     overflow: hidden;
