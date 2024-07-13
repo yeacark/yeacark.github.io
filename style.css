@@ -40,7 +40,7 @@ body {
 
 #userName {
     color: var(--accentColor);
-    font-size: 32px; /* Aumenta la dimensione del font */
+    font-size: 36px; /* Aumenta la dimensione del font */
     font-weight: bold;
     line-height: 1.25;
     display: block;
