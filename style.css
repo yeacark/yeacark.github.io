@@ -25,13 +25,18 @@ body {
     animation-fill-mode: forwards;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     position: relative;
 }
 
 #profilePicture, #profilePicture img {
     position: relative;
-    width: 128px;
-    height: 128px;
+    width: 96px;
+    height: 96px;
     display: block;
     margin: 40px auto 20px;
     border-radius: 50%;
@@ -40,7 +45,7 @@ body {
 
 #userName {
     color: var(--accentColor);
-    font-size: 34px; /* Aumenta la dimensione del font */
+    font-size: 32px; /* Aumenta la dimensione del font */
     font-weight: bold;
     line-height: 1.25;
     display: block;
@@ -105,14 +110,14 @@ body {
     /* border-color: var(--bgColor); /* Cambia il colore del bordo al passaggio del mouse */
   }
 
-  #hashtag {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    text-align: right;
-    margin-bottom: 25px;
-    margin-right: 25px;
+#hashtag {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
+    margin-bottom: 0;
 
     /*  animation   */
     overflow: hidden;
@@ -154,6 +159,22 @@ body {
     to {
         transform: translateY(-2000px);
     }
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#stars1, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
