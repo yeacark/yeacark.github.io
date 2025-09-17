@@ -17,8 +17,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+    opacity: 0;
+    animation: fadeInContainer 0.5s ease-out 0.2s forwards;
+}
 
+@keyframes fadeInContainer {
+    to {
+        opacity: 1;
+    }
+}
+
+
+@supports (-webkit-appearance: none) {
+    body {
+        background-attachment: scroll; /* Safari non supporta bene fixed con gradients */
+    }
+    
+    html {
+        background-attachment: scroll;
+    }
+}
+
+/* Media query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    html, body {
+        /* Previene il rimbalzo dello scroll */
+        overscroll-behavior-y: none;
+        /* Assicura che il background copra sempre l'intera area */
+        background-attachment: scroll;
+        height: 100%;
+        min-height: -webkit-fill-available;
+    }
+    
+    /* Fallback per browser che non supportano dvh */
+    @supports not (height: 100dvh) {
+        body {
+            min-height: calc(100vh + env(keyboard-inset-height, 0px));
+        }
+    }
+}
+
+html, body {
+    overflow: hidden;
+}
+
+html {
+    background: radial-gradient(ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
+    background-attachment: fixed;
+    min-height: 100%;
+}
+
+/* Modifica il body per una migliore gestione su mobile */
 body {
     margin: 0;
     padding: 0;
@@ -26,7 +75,7 @@ body {
     font-family: var(--font);
     background: radial-gradient(ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
     opacity: 0;
-    animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
+    animation: 1s ease-out 0.5s 1 transitionAnimation;
     animation-fill-mode: forwards;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,6 +85,21 @@ body {
     justify-content: center;
     min-height: 100vh;
     position: relative;
+    overscroll-behavior: none;
+}
+
+/* Aggiunge un overlay di backup per coprire eventuali flash */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: radial-gradient(ellipse at bottom, var(--bgColor) 0%, var(--bgColor2) 100%);
+    z-index: -2;
+    pointer-events: none;
 }
 
 /* Star Trail Effect */
@@ -47,6 +111,7 @@ body {
     height: 100vh;
     top: 0;
     left: 0;
+    overflow: hidden;
 }
 
 .star-particle {
@@ -89,8 +154,14 @@ body {
     text-decoration: none;
 }
 
+/* DA RIVEDERE 
+
 .links-container {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInContainer 0.5s ease-out 2.2s forwards;
   }
   
   #links {
@@ -99,9 +170,8 @@ body {
     display: block;
     margin: 27px auto;
     text-align: center;
-  }
+  } */
   
-/* Material You style for clickable buttons with dark blue color, stronger shadow, iOS-like radius, and improved torch hover effect */
 .link {
     display: inline-block;
     position: relative;
@@ -119,14 +189,54 @@ body {
     text-decoration: none;
     cursor: pointer;
     box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-    overflow: hidden; /* Needed for hover light clipping */
+    overflow: hidden;
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+    
+    /* Inizialmente nascosti */
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
 }
 
-/* Show default cursor on interactive elements */
+/* Animazioni scaglionate per i pulsanti dal centro verso l'esterno */
+/* Link del centro (4° e 5°) - SoundCloud e Spotify */
+.link:nth-child(4), .link:nth-child(5) {
+    animation: buttonAppear 0.6s cubic-bezier(0.34, 0.7, 0.64, 1) 0.6s forwards;
+}
+
+/* Secondo livello (3° e 6°) - TikTok e Steam */
+.link:nth-child(3), .link:nth-child(6) {
+    animation: buttonAppear 0.6s cubic-bezier(0.34, 0.7, 0.64, 1) 0.9s forwards;
+}
+
+/* Terzo livello (2° e 7°) - Instagram e YouTube */
+.link:nth-child(2), .link:nth-child(7) {
+    animation: buttonAppear 0.6s cubic-bezier(0.34, 0.7, 0.64, 1) 1.2s forwards;
+}
+
+/* Livello esterno (1° e 8°) - GitHub e Discord */
+.link:nth-child(1), .link:nth-child(8) {
+    animation: buttonAppear 0.6s  cubic-bezier(0.34, 0.7, 0.64, 1) 1.5s forwards;
+}
+
+@keyframes buttonAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.02) translateY(-1px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Show default cursor on interactive elements 
 .link, .popup-close, a {
     cursor: pointer !important;
-}
+} */
 
 /* Torchlight effect - dynamically created by JavaScript */
 .torchlight {
@@ -135,13 +245,13 @@ body {
     height: 140px;
     background: radial-gradient(
         circle,
-        rgba(255, 255, 255, 0.5) 0%,
-        rgba(255, 255, 255, 0.3) 25%,
-        rgba(255, 255, 255, 0.15) 45%,
-        rgba(255, 255, 255, 0.05) 65%,
+        rgba(255, 255, 255, 0.295) 0%,
+        rgba(255, 255, 255, 0.226) 25%,
+        rgba(255, 255, 255, 0.103) 45%,
+        rgba(255, 255, 255, 0.021) 65%,
         transparent 85%
     );
-    border-radius: 50%;
+    border-radius: 75%;
     pointer-events: none;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -168,7 +278,6 @@ body {
     z-index: 2; /* Ensures icons stay above the torchlight */
 }
 
-
 #hashtag {
     position: absolute;
     bottom: 25px;
@@ -177,16 +286,29 @@ body {
     width: auto;
     text-align: center;
     margin-bottom: 0;
+    opacity: 0;
+    animation: fadeInHashtag 0.5s ease-out 1.3s forwards, animate 5s linear 6s infinite;
 
-    /*  animation   */
+    /*  animation gradiente   */
     overflow: hidden;
     background: linear-gradient(90deg, var(--bgColor), var(--accentColor), var(--bgColor));
     background-repeat: no-repeat;
     background-size: 80%;
-    animation: animate 3s linear var(--delay) infinite;
+    background-position: 0 0; /* Added for gradient animation */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+/* Fix for initial hashtag animation "pause" */
+#hashtag {
+    animation-delay: 1.3s, 1.3s;
+}
+
+@keyframes fadeInHashtag {
+    to {
+        opacity: 1;
+    }
 }
 
 
@@ -251,6 +373,14 @@ body {
     height: 100vh;
     overflow: hidden;
     z-index: -1;
+    opacity: 0;
+    animation: fadeInStars 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInStars {
+    to {
+        opacity: 1;
+    }
 }
 
 #stars1, #stars2, #stars3 {
@@ -367,7 +497,7 @@ body {
     width: 1px;
     height: 1px;
     background: transparent;
-    animation: animStar 120s linear infinite;
+    animation: animStar 150s linear infinite;
 
     box-shadow: 779px 1331px #fff, 324px 42px #fff, 303px 586px #fff,
     1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff, 1087px 1871px #fff,

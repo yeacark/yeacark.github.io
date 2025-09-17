@@ -1,3 +1,22 @@
+// Gestione del loading screen
+document.addEventListener('DOMContentLoaded', function() {
+  // Aggiungi classe loading al body per prevenire scroll
+  document.body.classList.add('loading');
+  
+  // Rimuovi classe loading dopo che l'animazione è completata
+  setTimeout(() => {
+    document.body.classList.remove('loading');
+    
+    // Rimuovi completamente l'overlay dopo l'animazione
+    const loadingOverlay = document.querySelector('.loading-overlay');
+    if (loadingOverlay) {
+      setTimeout(() => {
+        loadingOverlay.remove();
+      }, 800); // Aspetta che l'animazione di fade sia completata
+    }
+  }, 2300); // Timing sincronizzato con l'animazione CSS
+});
+
 // Improved torchlight hover effect for all elements with .link class
 const buttons = document.querySelectorAll('.link');
 
@@ -110,19 +129,25 @@ class StarTrail {
   }
 
   createStarsAlongTrail() {
-    // Crea stelle lungo la scia (posizioni passate) - meno densità
+    // Calcola la velocità corrente
+    const speed = Math.sqrt(this.velocity.x * this.velocity.x + this.velocity.y * this.velocity.y);
+    
+    // Non generare stelle se la velocità è troppo bassa
+    if (speed < 2.4) return;
+    
+    // Crea stelle solo dietro al cursore (primi punti della scia)
     for (let i = 1; i < this.trailPositions.length; i++) {
-      const pos = this.trailPositions[i];
-      const prevPos = this.trailPositions[i - 1];
-      
-      // Probabilità molto ridotta per scia meno densa
-      const probability = (this.maxTrailLength - i) / this.maxTrailLength * 0.3; // Ridotta da 0.7 a 0.3
-      
-      if (Math.random() < probability) {
-        this.createStarAt(pos.x, pos.y, i);
-      }
+        const pos = this.trailPositions[i];
+        
+        // Probabilità ridotta e che diminuisce verso la fine della scia
+        const probability = (this.maxTrailLength - i) / this.maxTrailLength * 0.2;
+        
+        if (Math.random() < probability) {
+            this.createStarAt(pos.x, pos.y, i);
+        }
     }
-  }
+}
+
 
   createStarAt(x, y, trailIndex) {
     // Create star element
